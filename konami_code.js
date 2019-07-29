@@ -34,3 +34,5 @@ if (key === code[index]){
   
 );
 }
+
+init(); 
