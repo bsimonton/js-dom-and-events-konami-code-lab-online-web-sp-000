@@ -7,29 +7,21 @@ let index = 0;
 function init() {
   // Write your JavaScript code inside the init() function
 
- document.body.addEventListener('keydown', function(e){
-
-const key = parseInt(e.detail || e.which); 
-
-if (key === code[index]){
+document.body.addEventListener('keydown', function(event) {
   
-  index++;
-}
-  
- if (index === code.length) {
-   
-   alert("Congratulations!");
-   
-   index = 0;
- }
-  
-  else{
+    const key = parseInt(event.which || event.detail);
     
-    index = 0;
-  }
-  
-  
-  
- }
-  
-init(); 
+    if (key === code[index]) {
+      
+      index++;
+      if (index === code.length) {
+        
+        alert('Congratulations!');
+        index = 0;
+      }
+    } else {
+      index = 0;
+    }
+  });
+}
+init();
